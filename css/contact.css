@@ -1,0 +1,156 @@
+/*contact*/
+#contact-start1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: blcak;
+  z-index: 20;
+}
+
+#contact-start2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: hotpink;
+  z-index: 20;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #191919;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.contact-svg {
+  width: 50vw;
+  opacity: 0.7;
+  margin-left: 8%;
+}
+#curve-1, #curve-2 {
+  fill: transparent;
+}
+textPath {
+  opacity: 0;
+}
+.contact-img {
+  position: fixed;
+  opacity: 0;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+}
+
+text {
+  font-size: 8px;
+  fill: transparent;
+  stroke: hotpink;
+  stroke-width: 0.3;
+  font-family: arial, cursive;
+  font-weight: bold;
+}
+#text-1 {
+  fill: pink;
+  stroke: none;
+}
+
+.sns {
+  position: fixed;
+  top: 60%;
+  left: 40%;
+  width: 20vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  display: flex;
+  font-size: 30px;
+  opacity: 0;
+  justify-content: space-around;
+}
+
+.sns a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.sns ion-icon {
+  background: transparent;
+  border-radius: 25px;
+}
+.sns ion-icon:hover {
+  animation: flicker-in-2 2s linear both;
+}
+
+.alert {
+  color: white;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  font-size: 12px;
+  z-index: 20;
+  opacity: 0;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes flicker-in-2 {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    -webkit-box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+
+  30% {
+    opacity: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
+      0 0 100px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}

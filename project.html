@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crossroads Slideshow | Codrops</title>
+    <meta
+      name="description"
+      content="An experimental slideshow with an inclined look with three slide previews and a content view on click."
+    />
+    <meta
+      name="keywords"
+      content="slideshow, javascript, tweenmax, rotation, animation, css"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/project.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link href="css/scroll_demo.css" rel="stylesheet" />
+    <link href="css/scroll_style.css" rel="stylesheet" />
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
+  <body>
+    <nav id="slide-menu" class="menu menu--inola">
+      <div class="menu-box">
+        <a id="menu_project" class="slide-item" href="project.html">
+          <span>Projects</span>
+        </a>
+        <a id="menu_about" class="slide-item" href="about.html">
+          <span>About</span>
+        </a>
+        <a id="menu_contact" class="slide-item" href="contact.html">
+          <span>Contact</span>
+        </a>
+        <div class="blob">
+          <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+          <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-video">
+        <video id="project_video" autoplay muted loop>
+          <source src="videos/nyam01.mp4" type="video/mp4">
+        </video>
+        <video id="about_video" autoplay muted loop>
+          <source src="videos/about.mp4" type="video/mp4">
+        </video>
+        <video id="contact_video" autoplay muted loop>
+          <source src="videos/contact.mp4" type="video/mp4">
+        </video>
+      </div>
+    </nav>
+
+    <div
+      id="nav"
+      class="nav container-fluid align-items-center justify-content-between"
+    >
+      <span class="swingHorizontal"><a class="nav-menu" href="/">ha0</a></span>
+      <div class="three col">
+        <div class="hamburger" id="hamburger-1">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+      <sapn class="swingHorizontal mr-3"
+        ><a class="nav-menu"><i class="fab fa-github-alt"></i></a
+      ></sapn>
+      <sapn class="swingHorizontal"
+        ><a class="nav-menu"><i class="fas fa-bold"></i></a
+      ></sapn>
+    </div>
+
+    <main>
+      <!--네브끝-->
+
+      <div class="content">
+        <article class="content__item">
+        </article>
+        
+     
+
+      <div class="revealer">
+        <div class="revealer__inner"></div>
+      </div>
+      <div class="grid grid--slideshow">
+        <figure class="grid__item grid__item--slide grid__nyam">
+          <span class="number">01</span>
+          <div class="img-wrap">
+            <div class="img">
+              <div class="overlay"></div>
+              <video class="vedio_main" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="videos/nyam.mp4" type="video/mp4">
+                  <figcaption class="caption">New York City, March 24</figcaption>
+              </video>
+            </div>
+          </div>
+        </figure>
+        <figure class="grid__item grid__item--slide grid__live">
+          <span class="number">02</span>
+          <div class="img-wrap">
+            <div class="img">
+              <div class="overlay"></div>
+              <video class="vedio_main" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="videos/liveonbusan.mp4" type="video/mp4">
+                  <figcaption class="caption">New York City, March 24</figcaption>
+              </video>
+            </div>
+          </div>
+        </figure>
+
+        <div class="titles-wrap">
+          <div class="grid grid--titles">
+            <h3 class="grid__item grid__item--title">Nyam-Nyam</h3>
+            <h3 class="grid__item grid__item--title">Live on Busan</h3>
+          </div>
+        </div>
+
+        <div class="grid grid--interaction">
+          <div class="grid__item grid__item--cursor grid__item--left"></div>
+          <div class="grid__item grid__item--cursor grid__item--center"></div>
+          <div class="grid__item grid__item--cursor grid__item--right"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/charming.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/nav_white.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap"
+      rel="stylesheet"
+    />
+      <link href="css/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@300;400&family=Roboto+Slab&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet" />
+    <link href="css/about.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <nav id="slide-menu" class="menu menu--inola">
+      <div class="menu-box">
+        <a id="menu_project" class="slide-item" href="project.html">
+          <span>Projects</span>
+        </a>
+        <a id="menu_about" class="slide-item" href="about.html">
+          <span>About</span>
+        </a>
+        <a id="menu_contact" class="slide-item" href="contact.html">
+          <span>Contact</span>
+        </a>
+        <div class="blob">
+          <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+          <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-video">
+        <video id="project_video" autoplay muted loop>
+          <source src="videos/nyam01.mp4" type="video/mp4">
+        </video>
+        <video id="about_video" autoplay muted loop>
+          <source src="videos/about.mp4" type="video/mp4">
+        </video>
+        <video id="contact_video" autoplay muted loop>
+          <source src="videos/contact.mp4" type="video/mp4">
+        </video>
+      </div>
+    </nav>
+
+    <div
+      id="nav"
+      class="nav container-fluid align-items-center justify-content-between"
+    >
+      <span class="swingHorizontal"><a class="nav-menu" href="/">ha0</a></span>
+      <div class="three col">
+        <div class="hamburger" id="hamburger-1">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+      <sapn class="swingHorizontal mr-3"
+        ><a class="nav-menu"><i class="fab fa-github-alt"></i></a
+      ></sapn>
+      <sapn class="swingHorizontal"
+        ><a class="nav-menu"><i class="fas fa-bold"></i></a
+      ></sapn>
+    </div>
+    <div id="about-start1" class="about-start container-fluid"></div>
+    <div id="about-start2" class="about-start container-fluid"></div>
+    <section id="bg-morph">
+      <div class="hero__flourish">
+        <svg class="hero__flourish-shape" viewBox="0 0 665 861">
+          <path
+            fill="#FAE0E6"
+            stroke="#FAE0E6"
+            stroke-width="2"
+            d="M6 -1.00002L665 -1.00006L665 861C665 861 195.93 718.511 245.775 487.68C295.619 256.85 212.917 235.324 84.8721 149.674C-30.0745 72.7857 6 -1.00002 6 -1.00002Z"
+          ></path>
+        </svg>
+
+        <svg class="hero__flourish-outline" viewBox="0 0 665 861">
+          <path
+            fill="none"
+            stroke="#FAE0E6"
+            stroke-width="2"
+            d="M6 -1.00002L665 -1.00006L665 861C665 861 195.93 718.511 245.775 487.68C295.619 256.85 212.917 235.324 84.8721 149.674C-30.0745 72.7857 6 -1.00002 6 -1.00002Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="title">
+      <div class="hero__caption">
+        <h1 class="hero__title">
+          Hello, <br />my name is <span class="particletext hearts">Ha0</span>
+        </h1>
+        <p class="hero__copy">
+          개발이 재미있는 이유는 빠르게 발전하는 기술과 변화하는 트렌드에 맞춰
+          항상 배워나가야 한다는 점, 그로써 나 자신도 무궁무진하게 발전할 수
+          있다는 점입니다.
+          <br />트렌드에 맞춰 항상 연구하고 정진하는 개발자가 되겠습니다.
+        </p>
+      </div>
+      <a class="scroll-link" href="#aboutMe">
+        <svg
+          class="mouse"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 76 130"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <rect
+              width="70"
+              height="118"
+              x="1.5"
+              y="1.5"
+              stroke="#ff8b94"
+              stroke-width="3"
+              rx="36"
+            />
+            <circle class="scroll" cx="36.5" cy="31.5" r="4.5" fill="#ff8b94" />
+          </g>
+        </svg>
+      </a>
+    </section>
+
+    <svg
+      id="path-text"
+      viewBox="0 0 1000 200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="text-curve"
+        d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0"
+        fill="none"
+      />
+
+      <text y="40" font-size="25">
+        <textPath id="text-path" href="#text-curve" startOffset="200">
+          * A better future happens by development, not chance.
+        </textPath>
+      </text>
+    </svg>
+
+    <section id="aboutMe">
+      <div class="aboutMe">
+        <div id="aboutMe-path" class="blob_blue">
+          <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+          <svg
+            id="aboutMe-svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 310 350"
+          >
+            <path
+              id="blob-path"
+              d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"
+            />
+          </svg>
+        </div>
+
+        <div class="aboutMe-card">
+          <div class="card-content">
+            <h1>Choi Hayeong <span>@ha0</span></h1>
+            <div class="card-introduces">
+              <h4 class="mb-4">
+                <span>H</span>ard worker, <span>A</span>chievable,
+                <span>0</span> in on works
+              </h4>
+              <p>제이름을 본딴 이 3단어는 일할 때의 제 모습을 담고 있습니다.</p>
+              <p>
+                저는 일을 할 때, 온 정신이 그 일에 집중되어 온전히 몰두하는
+                사람, <br />결과에 대한 욕심이 있어 많은 노력과 시간을 맡은 일에
+                투자하는 사람입니다.
+              </p>
+              <p>
+                저는 다양한 방법을 모색하여 가장 효율적인 방법으로 구현하는 것을
+                좋아하며, <br />이용자들에게 보이지 않는 부분까지도 꼼꼼하고
+                깔끔하게 처리합니다.
+              </p>
+              <p>
+                저의 욕심과 욕구는 앞으로도 많은 것들을 배우게 할 것이며,
+                최신기술을 끊임없이 연구하여 이용자와 협업자 모두에게 좋은
+                이용자경험을 제공하는 개발자가 되겠습니다.
+              </p>
+            </div>
+          </div>
+          <a href="contact.html" class="buttonOverlay">Contact Me</a>
+
+          <div class="card-photo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="skills">
+        <div><h1 class="skills__title">skills</h1></div>
+      </div>
+
+      <ul class="grid cs-style-4">
+        <li>
+          <figure>
+            <div>
+              <img src="images/about/java.jpg" width="400" height="300" />
+            </div>
+            <figcaption>
+              <h3 class="mb-4">Java</h3>
+              <p>· 다양한 패키지, 클래스 활용</p>
+              <p>· 입출력 스트림 활용</p>
+              <p>· JAVA 이벤트 처리</p>
+              <p>· 스윙 컴포넌트 활용</p>
+              <p>· 스레드와 멀티태스킹</p>
+              <p>· 소켓 프로그래밍</p>
+              <p>· SQL 활용</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div><img src="images/about/jsp.jpg" alt="img06" /></div>
+            <figcaption>
+              <h3 class="mb-4">Jsp</h3>
+              <p>· JSP 문법 활용 (표현식, 스크립트릿 선언, JSTL 등</p>
+              <p>· Session과 Cookie 활용</p>
+              <p>· 페이지 간 객체 전달</p>
+              <p>· 서블릿의 동작 원리와 라이프 사이클에 대한 이해</p>
+              <p>· JDBC를 이용하여 DB와 연동</p>
+              <p>· JAVA기반 동적페이지 구축</p>
+              <p>· MVC패턴: 게시판 구현</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div><img src="images/about/js.jpg" alt="img02" /></div>
+            <figcaption>
+              <h3>HTML</h3>
+              <h3>JavaScript</h3>
+              <h3>JQuery</h3>
+              <h3 class="mb-4">css</h3>
+              <p>· 다양한 이벤트 처리</p>
+              <p>· Ajax를 이용한 댓글처리, 유효성 검증</p>
+              <p>· BOOTSTRAP을 활용</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div><img src="images/about/spring.jpg" alt="img04" /></div>
+            <figcaption>
+              <h3 class="mb-4">Spring</h3>
+              <p>· Spring MVC 설정 및 사용</p>
+              <p>· MyBatis활용</p>
+              <p>· 게시글 CRUD, 검색, 페이징 처리</p>
+              <p>· REST 방식, Ajax: 댓글, 좋아요, 팔로우 처리</p>
+              <p>· AOP와 트랜잭션 사용</p>
+              <p>· 파일 업로드</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div><img src="images/about/db.jpg" alt="img01" /></div>
+            <figcaption>
+              <h3 class="mb-4">Database</h3>
+              <p>· DDL, DCL, DML구별, 사용</p>
+              <p>· 데이터 무결성을 지키기 위한 제약조건 설정</p>
+              <p>· INDEX의 생성 원리, 동작 원리 이해</p>
+              <p>· VIEW의 사용 목적이해, 생성</p>
+              <p>· SUB QUERY,SEQUENCE 활용</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/nav_black.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#about-start1").slideUp(500);
+        $("#about-start2").delay(500).slideUp(500);
+        $("body").css("background-color", "white");
+        $(".line").css("background-color", "black");
+        $("#nav").css("animation-delay", "1.5s");
+        $(".nav-menu").css("color", "black");
+        $(window).scroll(function () {
+          /* 2 */
+          $(".aboutMe").each(function (i) {
+            var bottom_of_element =
+              $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_element) {
+              $(this).animate({ opacity: "1" }, 500);
+            }
+          });
+
+          $("#path-text").each(function (i) {
+            var bottom_of_element =
+              $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_element) {
+              $(this).attr("class", "tracking-in-contract");
+              $("#path-text").fadeIn(700);
+            }
+          });
+
+          $(".skills__title").each(function (i) {
+            var bottom_of_element =
+              $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_element) {
+              $(this).css(
+                "animation",
+                "slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+              );
+              // $(this).attr('class','tracking-in-contract');
+            }
+          });
+
+          $("figure").each(function (index) {
+            var bottom_of_element =
+              $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_element) {
+              $(this)
+                .delay(index * 250)
+                .queue(function (next) {
+                  $(this).css("visibility", "visible");
+                  $(this).css(
+                    "animation",
+                    "flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+                  );
+                  next();
+                });
+            }
+          });
+        });
+      });
+
+      function initparticles() {
+        hearts();
+      }
+
+      function hearts() {
+        $.each($(".hearts"), function () {
+          var heartcount = ($(this).width() / 50) * 5;
+          for (var i = 0; i <= heartcount; i++) {
+            var size = $.rnd(60, 120) / 10;
+            $(this).append(
+              '<span class="particle" style="top:' +
+                $.rnd(20, 80) +
+                "%; left:" +
+                $.rnd(0, 95) +
+                "%;width:" +
+                size +
+                "px; height:" +
+                size +
+                "px;animation-delay: " +
+                $.rnd(0, 30) / 10 +
+                's;"></span>'
+            );
+          }
+        });
+      }
+
+      jQuery.rnd = function (m, n) {
+        m = parseInt(m);
+        n = parseInt(n);
+        return Math.floor(Math.random() * (n - m + 1)) + m;
+      };
+      setTimeout(function () {
+        initparticles();
+      }, 2500);
+    </script>
+  </body>
+</html>

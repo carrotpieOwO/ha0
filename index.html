@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto+Slab:wght@300&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  
+    
+</head>
+<body>
+
+<section id="main">
+    <div class=" main_back">
+
+    </div>
+<div class="container ">
+<div class="row">
+    <div class="typewriter">
+        <h1 class="typewriter-text ">
+            <span class="initial">H</span>ard Worker, </h1><br>
+        <h1 class="typewriter-text">
+            &nbsp; <span class="initial">A</span>chievable, </h1><br>
+        <h1 class="typewriter-text" style="color: #000;">
+            &nbsp;&nbsp; <span class="initial">0</span> of in works 
+        </h1>
+
+    </div>
+<div id="box" class="scene">
+    <div class="cube">
+      <div class="cube__face cube__face--front">ha0</i></div>
+      <div class="cube__face cube__face--back">
+          <i class="fas fa-database"></i>
+          <strong style="font-size: 20px;">DB</strong>
+        </div>
+      <div class="cube__face cube__face--right"><img src='jsp.png'></div>
+      <div class="cube__face cube__face--left">
+          <i class="fab fa-java"></i>
+        <strong style="font-size: 20px;">Java</strong>
+    </div>
+      <div class="cube__face cube__face--top"><img src='spring_icon.png'></div>
+      <div class="cube__face cube__face--bottom"><i class="fab fa-js"></i></div>
+    </div>
+  </div>
+  
+</div>
+</div>
+</section>
+
+   
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+    $('#box').animate({
+        left: '20vw'}, 1000,
+     function(){
+         $('.typewriter-text').each(function(index){
+             $(this).delay(index*1000)
+             .queue(function(next){
+                $(this).css('visibility','visible');
+                $(this).css('animation','typing 1s steps(30, end)');
+                next();
+                
+             });
+            
+         })
+    })
+    
+
+});
+
+ setTimeout(function() {
+    location.href='project.html';
+ }, 6000);
+
+
+
+</script>
+</body>
+</html>

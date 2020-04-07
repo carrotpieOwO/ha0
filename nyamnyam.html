@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crossroads Slideshow | Codrops</title>
+    <meta
+      name="description"
+      content="An experimental slideshow with an inclined look with three slide previews and a content view on click."
+    />
+    <meta
+      name="keywords"
+      content="slideshow, javascript, tweenmax, rotation, animation, css"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/nyam.css" /> 
+   <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    /> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link href="css/scroll_demo.css" rel="stylesheet" />
+    <link href="css/scroll_style.css" rel="stylesheet" /> 
+    <link href="css/nav.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+    <nav id="slide-menu" class="menu menu--inola">
+      <div class="menu-box">
+        <a id="menu_project" class="slide-item" href="project.html">
+          <span>Projects</span>
+        </a>
+        <a id="menu_about" class="slide-item" href="about.html">
+          <span>About</span>
+        </a>
+        <a id="menu_contact" class="slide-item" href="contact.html">
+          <span>Contact</span>
+        </a>
+        <div class="blob">
+          <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+          <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-video">
+        <video id="project_video" autoplay muted loop>
+          <source src="videos/nyam01.mp4" type="video/mp4">
+        </video>
+        <video id="about_video" autoplay muted loop>
+          <source src="videos/about.mp4" type="video/mp4">
+        </video>
+        <video id="contact_video" autoplay muted loop>
+          <source src="videos/contact.mp4" type="video/mp4">
+        </video>
+      </div>
+    </nav>
+
+    <div
+      id="nav"
+      class="nav container-fluid align-items-center justify-content-between"
+    >
+      <span class="swingHorizontal"><a class="nav-menu" href="/">ha0</a></span>
+      <div class="three col">
+        <div class="hamburger" id="hamburger-1">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+      <sapn class="swingHorizontal mr-3"
+        ><a class="nav-menu"><i class="fab fa-github-alt"></i></a
+      ></sapn>
+      <sapn class="swingHorizontal"
+        ><a class="nav-menu"><i class="fas fa-bold"></i></a
+      ></sapn>
+    </div>
+
+    <main>
+      <!--네브끝-->
+
+      <div class="content">
+        <article class="content__item">
+          <div class="img-wrap img-wrap--content">
+            <div class="img img--content" >
+            <div class="overlay"></div>
+            <video id="myVideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="videos/nyam01.mp4" type="video/mp4">
+                   Sorry, your browser does not support HTML5 video.
+         </video>
+          </div>
+          </div>
+
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Back</span>
+          </button>
+
+          <header class="content__item-header">
+            <span class="content__item-header-meta">Spring FrameWork</span>
+            <span class="content__item-header-meta">개발기간: 2주</span>
+            <h2 class="content__item-header-title">Nyam Nyam</h2>
+          </header>
+          <div class="content__item-copy">
+            <p class="content__item-copy-text">
+              - 스프링 개발환경 구축<br />
+              - AJAX 사용 및 MVC 패턴 이해<br />
+              - 인스타그램의 주요 기능의 개발과정 경험하기 (좋아요, 팔로우, 보관
+              등)<br />
+              - 자신이 가본 맛집에 대한 솔직한 리뷰를 공유하여 맛집정보를 찾기
+              쉽고, 자신과 같은 지역의 취향이 비슷한 유저를 팔로우하여 자신의
+              취향에 맞는 맛집을 보다 쉽게 찾을 수 있는 사이트 구현
+            </p>
+<div class="flip_container">
+            <div class="flip content__item-copy-more">
+              <a href="https://dribbble.com/shots/2507318-start-rollover" target="_blank">
+                  <div class="front">site</div>
+                  <div class="back">site</div>
+            </a>
+          </div>
+          <div class="flip content__item-copy-more">
+            <a href="https://dribbble.com/shots/2507318-start-rollover" target="_blank">
+                <div class="front">git-hub</div>
+                <div class="back">git-hub</div>
+          </a>
+        </div>
+      </div>
+          </div>
+        </article>
+        <div class="content_area">
+          <div class="content_function_title skills__title">
+            <div class="m-testimonial__icon">
+              <img src="images/effect/quotes.svg" alt="" />
+            </div>
+            <h3>주요기능</h3>
+          </div>
+          <div class="row content_function">
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/join.png" alt="" />
+              <p>회원가입</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/login.png" alt="" />
+              <p>로그인</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/profile.png" alt="" />
+              <p>프로필편집</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/crud.png" alt="" />
+              <p>CRUD</p>
+            </div>
+          </div>
+          <div class="row ml-3 content_function">
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/comment.png" alt="" />
+              <p>댓글</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/search.png" alt="" />
+              <p>검색</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/scroll.png" alt="" />
+              <p>무한스크롤</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/tag.png" alt="" />
+              <p>태그</p>
+            </div>
+          </div>
+          <div class="row mr-3 content_function">
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/follow.png" alt="" />
+              <p>팔로우</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/like.png" alt="" />
+              <p>좋아요</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/bookmark.png" alt="" />
+              <p>보관</p>
+            </div>
+            <div class="col-md-3 content_function_img">
+              <img src="images/function/notice.png" alt="" />
+              <p>알림</p>
+            </div>
+          </div>
+          <p></p>
+        </div>
+
+        <div class="content_area">
+          <div class="content_function_title skills__title">
+            <div class="m-testimonial__icon">
+              <img src="images/effect/quotes.svg" alt="" />
+            </div>
+            <h3>DB 구조</h3>
+          </div>
+          <div class="row content_function">
+            <img src="images/nyam/db.png" alt="" />
+          </div>
+        </div>
+        <br />
+        <div class="content_area">
+          <div class="content_function_title skills__title">
+            <div class="m-testimonial__icon">
+              <img src="images/effect/quotes.svg" alt="" />
+            </div>
+            <h3>구현기술</h3>
+          </div>
+
+          <div id="view_main" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="/images/nyam/main1.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/nyam/main2.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/nyam/main3.png"
+                  alt="New York"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#view_main"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#view_main"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <div class="content-text">
+            <h5 class="carousel-title">
+              메인화면 <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>전체게시글, 팔로우한 유저 게시글, 지역별 게시글별로 출력</p>
+            <p>AJAX를 사용하여 무한스크롤 구현</p>
+            <p>카테고리별, 좋아요순, 보관순으로 한번 더 필터링</p>
+            <p>
+              substring을 통해 전체 게시글인지 지역별 게시글인지에 따라 DB에서
+              주소를 잘라서 가져옴(전체:도시명, 지역별:동이름)
+            </p>
+            <p>마우스오버로 게시글의 간단히 인기도 출력(좋아요수, 보관수)</p>
+          </div>
+        </div>
+        <div class="content_area">
+          <div id="view_member" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="/images/nyam/join.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/nyam/profile.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#view_member"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#view_member"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <div class="content-text">
+            <h5 class="carousel-title">
+              회원정보 <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>
+              유효성 검사: AJAX 사용하여 @valid 어노테이션의 메시지 및 아이디
+              중복여부 출력
+            </p>
+            <p>
+              비밀번호는 시큐리티의 BCryptPasswordEncoder를 사용하여 암호화하여
+              DB에 저장
+            </p>
+            <p>주소찾기: kakao API를 사용</p>
+            <p>스프링 시큐리티로 로그인 기능 구현</p>
+            <p>파일업로드하여 프로필 사진 업데이트/삭제 기능 구현</p>
+            <p>자바스크립트로 파일크기 및 확장자 검증</p>
+            <p>
+              instagram란의 경우 주소를 모두 입력하지 않아도 되는 편의성 제공
+            </p>
+          </div>
+        </div>
+
+        <div class="content_area">
+          <div id="view_write" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="/images/nyam/write.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/nyam/write2.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#view_write"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#view_write"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <div class="content-text">
+            <h5 class="carousel-title">
+              게시글 작성/수정/삭제
+              <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>자바스크립트로 파일크기, 확장자, 파일 개수 체크</p>
+            <p>파일명 중복 방지를 위해 UUID 사용하여 서버 및 DB에 저장</p>
+            <p>자바스크립트로 별점매기기 기능 구현</p>
+            <p>
+              카카오지도의 '키워드검색'과 '카테고리검색' API를 섞어 활용하여
+              유저가 카테고리를 별도로 지정하지 않고 자동으로 카테고리를 DB에
+              저장
+            </p>
+            <p>
+              가게이름을 타이핑하면 동적으로 위치정보 값으로 넘겨 검색 및
+              카카카오지도에 표시되도록 구현
+            </p>
+            <p>
+              자바스크립트로 태그의 '#'을 기준으로 단어를 잘라 DB에 개별 저장
+            </p>
+          </div>
+          <div class="mb-5"></div>
+        </div>
+
+        <div class="content_area">
+          <div id="view_detail" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/nyam/detail.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/nyam/comment.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#view_detail"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#view_detail"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <div class="content-text">
+            <h5 class="carousel-title">
+              상세보기/댓글/좋아요/보관
+              <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>
+              AJAX사용하여 좋아요 기능 및 좋아요한 유저리스트 출력 기능 구현
+            </p>
+            <p>AJAX사용하여 팔로우/언팔로우 기능 구현</p>
+            <p>
+              AJAX사용하여 보관기능 구현(해당 게시글을 나의 마이페이지 보관함에
+              저장)
+            </p>
+            <p>자바스크립트를 통하여 동적으로 좋아요 수, 팔로워 수 처리</p>
+            <p>AJAX사용하여 댓글 작성 및 삭제기능 구현(말풍선 형식)</p>
+            <p>태그검색 기능 구현</p>
+            <p>
+              카카오지도 API를 사용하여 가게명으로 위치정보 출력(가게위치, 주소,
+              전화번호)
+            </p>
+            <p>해당 게시글의 위치정보를 통해 근처 맛집의 리뷰게시글 출력</p>
+          </div>
+        </div>
+
+        <div class="content_area">
+          <div id="view_mypage" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/nyam/mypage.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/nyam/alert.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#view_mypage"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#view_mypage"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+          <div class="content-text">
+            <h5 class="carousel-title">
+              마이페이지/새소식
+              <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>
+              유저의 프로필 정보 출력 및 해당유저의 게시글리스트, 보관함 리스트,
+              팔로워/팔로잉 리스트 구현
+            </p>
+            <p>AJAX사용하여 팔로우/언팔로우 기능 구현</p>
+            <p>자바스크립트를 통하여 동적으로 팔로워 수, 팔로잉 수 처리</p>
+            <p>
+              AJAX사용하여 자신에게 좋아요, 댓글달기, 팔로우한 기록을 최신순으로
+              정렬하여 출력하도록 구현
+            </p>
+          </div>
+        </div>
+
+        <div class="content_area">
+          <div id="view_search" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/nyam/palce.png"
+                  alt="Los Angeles"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/nyam/user.png"
+                  alt="Chicago"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/nyam/tag.png"
+                  alt="New York"
+                  width="1100"
+                  height="500"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#view_search"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#view_search"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+          <div class="content-text end">
+            <h5 class="carousel-title">
+              검색 <i class="fas fa-utensils" style="color: #ffc107;"></i>
+            </h5>
+            <p>정규표현식을 사용하여 검색결과 리스트 구현</p>
+            <p>
+              장소검색: 검색결과가 있을 경우 kakao지도 키워드검색 API를 사용하여
+              지도에 출력하고 검색결과 리스트를 출력하도록 구현
+            </p>
+            <p>
+              태그검색: 검색결과 리스트 출력 및 검색결과에 해당하는 다른
+              태그버튼 클릭 시 해당 태그로 재검색하도록 구현
+            </p>
+          </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script> 
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/charming.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/nyam.js"></script>
+    <script src="js/nav_white.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script>
+      
+
+
+    </script>
+  </body>
+</html>

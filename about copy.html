@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  
+    <style>
+.scene { 
+    width: 50px;
+    height: 50px;
+    perspective: 150px;
+    position: relative;
+}
+
+.cube { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    animation: rotation 5s infinite;
+}
+
+.cube__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+    .cube__face--front {
+        background: #f06595;
+        transform: rotateY(0deg) translateZ(25px);
+        opacity: 0.7;
+    }
+    
+    .cube__face--back {
+        background: rgba(98, 155, 206, 0.7);
+        transform: rotateY(180deg) translateZ(25px);
+        flex-direction: column;
+    }
+    
+    .cube__face--right {
+        background: rgba(98, 206, 203, 0.7);
+        transform: rotateY(90deg) translateZ(25px);
+    }
+    
+    .cube__face--left {
+        background: #ffd385;
+        transform: rotateY(-90deg) translateZ(25px);
+        flex-direction: column;
+        opacity: 0.7;
+
+    }
+    
+    .cube__face--top {
+        background:rgba(203, 98, 206, 0.7);
+        transform: rotateX(90deg) translateZ(25px);
+    }
+    
+    .cube__face--bottom {
+        background: #ffd3b5;
+        transform: rotateX(-90deg) translateZ(25px);
+        opacity: 0.7;
+    }
+    
+  .typewriter{
+    font-family: 'Playfair Display', serif;
+    
+    font-size: 50px;
+	display: inline-block;
+  }
+  .typewriter-text {
+    display: inline-block;
+    visibility: hidden;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+    white-space: nowrap;
+    font-size: 50px;
+    font-weight: 700;
+    position: relative;
+    color: ivory;
+}
+
+.initial{
+    color:#F279B2;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes slide-up {
+    from { 
+        height: 0vh;
+    }
+    to { 
+        height: 100vh ;
+    }
+}
+
+@keyframes slide-down {
+    from { 
+        height: 0vh;
+        z-index: -3;
+    }
+    to { 
+        height: 100vh ;
+        z-index: 3;
+    }
+}
+
+
+.main_back {
+    content: "";
+    overflow: hidden;
+    
+    background-image: linear-gradient(transparent 60%, #494373 40%);
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 0vh;
+    width: 100vw;
+    display: block;
+    z-index: -1;
+    bottom: 45%;
+    left:0;
+    animation: slide-up 1s steps(40, end);
+    animation-fill-mode:forwards;
+     
+    } 
+
+
+
+html {
+    height: 100%;
+}
+body {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+    overflow-x: hidden;
+    background-color: #261E59;
+} 
+
+
+
+@keyframes rotation {
+    0% {
+        transform: translateZ(-100px) rotate3d(0,0,0);
+    }
+    100% {
+        transform: translateZ(-100px) rotate3d(1,0,1,360deg);
+    }
+}
+
+@keyframes fadeOut {
+   
+   0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  } 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    z-index: -3;
+  }
+  100% {
+    opacity: 1;
+    z-index: 9;
+  }
+}
+
+.cube:hover{
+    animation-play-state: paused;
+
+}
+
+
+
+.container{
+    width: 60%;
+    
+}
+
+#main{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+ animation: fadeOut ;
+    animation-duration: 1s;
+    animation-delay: 4.5s; 
+    animation-timing-function: linear;
+  animation-direction: relative;
+    animation-fill-mode:forwards;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+}
+
+#nav{
+    /* background-color: #261E59; */
+    position: fixed;
+    top:0;
+    left:0;
+    height: 70px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 30px;
+    color: white;
+    justify-content: between;
+    align-items: center; 
+      opacity: 0;
+     animation: fadeIn ;
+    animation-duration: 1s;
+    animation-delay: 5.5s; 
+    animation-timing-function: linear;
+  animation-direction: relative;
+    animation-fill-mode:forwards;     
+    display: flex;
+    z-index: -3;
+    
+}
+
+
+.swingHorizontal:hover
+{
+ animation: shake-top .8s cubic-bezier(.455,.03,.515,.955) both;
+    animation-iteration-count: 1; 
+}
+@keyframes shake-top{0%,100%{transform:rotate(0deg);transform-origin:50% 0}10%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-4deg)}30%,50%,70%{transform:rotate(4deg)}80%{transform:rotate(-2deg)}90%{transform:rotate(2deg)}}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.row .three{
+  padding: 80px 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+}
+
+.hamburger .line{
+  width: 30px;
+  height: 1px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+ 
+  transform: translateY(7px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+#slide-menu{
+    background-color: ivory;
+    position: fixed;
+    top:0;
+    height:0vh;
+    width: 100vw;
+    transition: transform 0.5s;
+    z-index: -8;
+    
+    float: left;
+
+}
+
+.menu-box{
+    position: relative;
+    top:20%; 
+    left: 10%;  
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+ #slide-menu a{
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    opacity: 0; 
+     display: flex;
+	flex-direction: column; 
+	align-items: center;  
+	margin: 1.25em 0;
+    font-family: 'Fanwood Text', serif;
+	font-size: 2.25em;
+	padding: 0 0.25em;
+    justify-content: left;
+    
+    
+
+} 
+
+
+
+.slide-item span, .nav-menu {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.slide-item span:before, .slide-item span:after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 12px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: hotpink;
+}
+.nav-menu:before, .nav-menu:after {
+    content: '';
+  position: absolute;
+  width: 0%;
+  height: 9px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: hotpink;
+}
+
+.slide-item span:before {
+  left: -2.5px;
+  transform: translateY(-2px) rotate(-8deg);
+}
+
+.nav-menu:before{
+    left: -3.5px;
+}
+
+.slide-item span:after {
+    left: -2.5px;
+    background: pink;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    z-index: -1;
+}
+
+.nav-menu:before{
+    left: -3.5px;
+    background: hotpink;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.slide-item span:hover:before {
+  background: hotpink;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: translateY(-2px) rotate(-8deg);
+
+}
+
+.nav-menu:hover:before{
+    background: hotpink;
+  width: 130%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.slide-item span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+.nav-menu:hover:after{
+    background: transparent;
+  width: 130%;
+  transition: 0s;
+}
+
+
+#contact_video{
+  visibility: hidden;
+  position: absolute;
+  width: 50%;
+  height: 50%; 
+  top: 25%;
+  left: 40%;
+  float: center;
+}
+#project_video{
+  visibility: hidden;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 50%;
+  height: 50%; 
+  float: center;
+}
+
+/*about 관련 css*/
+#about-start1{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ff8c94;
+}
+
+#about-start2{
+    width: 100vw;
+    height: 100vh;
+    background-color: #daf8ff;
+}
+
+
+@keyframes morph{
+    0%{d:path("M114.499 -0.999968L240.999 -1.00003L240.999 217.5C240.999 217.5 81.9999 310 67.499 217.5C52.9982 125 -29.0004 116 11.9998 57.5C53 -1.00005 114.499 -0.999968 114.499 -0.999968Z");
+    transform:translateX(450px)}
+    100%{d:path("M6 -1.00002L665 -1.00006L665 861C665 861 195.93 718.511 245.775 487.68C295.619 256.85 212.917 235.324 84.8721 149.674C-30.0745 72.7857 6 -1.00002 6 -1.00002Z")}
+    }
+
+@keyframes small{
+    0%{transform:scale(1);opacity:0}
+    100%{transform:scale(1.1);transform-origin:right;opacity:1}
+    }
+
+
+.hero__flourish {
+    top: -100px;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+}
+
+
+.hero__flourish-shape {
+    max-height: 861px;
+    height: 100%;
+    max-width: 100%;
+    float: right;
+    position: fixed;
+    top: 0;
+    right: -20px;
+    opacity: 0;
+    animation-name: small;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+svg{
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.hero__flourish-shape path {
+    
+    animation-name: morph;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.hero__flourish-outline {
+    position: fixed;
+    top: 0;
+    right: 0;
+    float: right;
+    max-height: 861px;
+    height: 100%;
+    max-width: 100%;
+    opacity: 0;
+    animation-name: small;
+    animation-duration: 0.5s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+.hero__title span {
+    position: relative;
+    display: inline-block;
+}
+
+.hero__title span:after{
+    content:"";
+    overflow:hidden;
+    background-image:url(images/effect/brush-pink.svg);
+    background-repeat:no-repeat;
+    position:absolute; 
+    height:13px;
+    width:0;
+    display:block;
+    z-index:-1;
+    bottom: 3px;
+    animation:typing 0.3s steps(40, end);
+    animation-delay:2.5s;
+    animation-fill-mode:forwards;
+    }
+
+.hero__caption {
+    margin-top: 0;
+     position: absolute; 
+    top: 35%;
+    left: 25%;
+    opacity: 0;
+     animation: fadeIn ;
+    animation-duration: 1s;
+    animation-delay: 1.5s; 
+    animation-timing-function: linear;
+  animation-direction: relative;
+    animation-fill-mode:forwards;   
+}
+
+.hero__title {
+    overflow: hidden;
+    font-family: "Playfair Display",serif;
+    color: #2F2F2F;
+    font-size: 3.8rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    width: 0;
+    -webkit-animation: typing 0.75s steps(40, end);
+    animation: typing 0.75s steps(40, end);
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.hero__copy{
+    width: 64%;
+    font-size: 12px;
+}
+
+.mouse {
+	max-width: 2.5rem;
+	width: 100%;
+	height: auto;
+    opacity: 0;
+    animation: fadeIn ;
+    animation-duration: 1s;
+    animation-delay: 1.5s; 
+    animation-timing-function: linear;
+  animation-direction: relative;
+    animation-fill-mode:forwards;   
+}
+
+.scroll {
+	animation-name: scroll;
+	animation-duration: 1.5s;
+	animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+	animation-iteration-count: infinite;
+	transform-origin: 50% 20.5px;
+	will-change: transform, opacity;
+	opacity: 1;
+}
+
+.scroll-link {
+	position: absolute;
+	bottom: 3rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@keyframes scroll {
+
+	0%, 20% {
+		transform: translateY(0) scaleY(1);
+	}
+
+	100% {
+		transform: translateY(36px) scaleY(2);
+		opacity: 0;
+	}
+
+}
+
+
+@keyframes hearts {
+   0% {
+      opacity: 0;
+      transform:translate(0, 0%) rotate(45deg);
+   }
+   20% { 
+      opacity: 0.8;
+      transform:translate(0, -20%) rotate(45deg);
+   }
+   100% {
+      opacity: 0;
+      transform:translate(0, -1000%) rotate(45deg); 
+   }
+}
+
+.particletext {
+	 text-align: center;
+	 font-size: 48px;
+	 position: relative;
+}
+ 
+.particletext.hearts > .particle {
+	 opacity: 0;
+	 position: absolute;
+	 background-color: rgba(204, 42, 93, 1);
+	 animation: hearts 3s ease-in infinite;
+}
+.particletext.hearts > .particle:before, .particletext.hearts > .particle:after {
+	 position: absolute;
+	 content: '';
+	 border-radius: 100px;
+	 top: 0px;
+	 left: 0px;
+	 width: 100%;
+	 height: 100%;
+	 background-color: rgba(204, 42, 93, 1);
+}
+.particletext.hearts > .particle:before {
+	 transform: translateX(-50%);
+}
+.particletext.hearts > .particle:after {
+	 transform: translateY(-50%);
+}
+
+#text-container{
+    margin-top: 15%;
+}
+
+
+.aboutMe {
+	 width: 90%;
+	 position: relative;
+	 max-width: 850px;
+	 margin: auto;;
+     margin-top: 10%;  
+	 background: transparent ;
+	 box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	 padding: 25px; 
+     border: lightgrey 1px solid;
+	 border-radius: 25px;
+	 height: 400px;
+	 transition: all 0.3s;
+     opacity: 0;
+}
+
+ @media screen and (max-width: 992px) {
+    .aboutMe {
+		 max-width: 700px;
+		 height: 500px;
+	}
+}
+ @media screen and (max-width: 768px) {
+    .aboutMe {
+		 min-height: 750px;
+		 height: auto;
+		 margin: 180px auto;
+	}
+}
+ @media screen and (max-height: 500px) and (min-width: 992px) {
+    .aboutMe {
+		 height: 350px;
+         margin: auto;
+	}
+}
+
+.aboutMe-card{
+    display: flex;
+	align-items: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+	 .aboutMe-card {
+		 flex-direction: column;
+	}
+}
+
+.card-photo{
+    width: 350px;
+	 flex-shrink: 0;
+	 height: 350px;
+	 background: url('images/about/ha0.jpg');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-attachment: center;
+     background-size:cover;
+	 box-shadow: 4px 13px 30px 1px rgba(34, 35, 58, 0.2);
+	 border-radius: 20px;
+	 transform: translateX(-25%);
+	 overflow: hidden;
+}
+
+
+ @media screen and (max-width: 768px) {
+	 .card-photo {
+		 transform: translateY(-50%);
+		 width: 90%;
+	}
+}
+ @media screen and (max-width: 576px) {
+    .card-photo {
+		 width: 95%;
+	}
+}
+ @media screen and (max-height: 500px) and (min-width: 992px) {
+    .card-photo {
+		 height: 270px;
+	}
+}
+
+.card-content {
+	 padding-right: 25px;
+     transform: translateY(25px);
+	 transition: all 0.4s;
+     margin-bottom: 15px;
+     margin-left: 280px;
+	  display: inline-block; 
+     position: absolute;
+     top: 0;
+     line-height: 15px;
+     }
+
+.card-content h1{
+    display: flex;
+    justify-content: center;    
+}
+
+.card-content span{
+    font-size: 12px;
+    margin-top: auto;
+    color: hotpink;
+}
+
+ @media screen and (max-width: 768px) {
+	 .card-content{
+		 /* margin-top: 150px; */
+		 text-align: center;
+         margin:auto;
+		 padding: 0 30px;
+         top: 35%;
+	}
+}
+ @media screen and (max-width: 576px) {
+	 .card-content {
+		 padding: 0;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	 .card-introduces{
+		 margin:auto;
+	}
+}
+
+.card-introduces{    
+   margin-top: 5%;
+   margin-left: 5%; 
+   font-size: 20px;
+   color: gray;
+}
+
+.card-introduces p{
+    font-size: 12px;
+    color: black;
+}
+
+.card-introduces span{
+    color: hotpink;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.buttonOverlay {
+    padding: 10px 25px;
+    position: absolute;
+    color: #fff;
+    right: 5%;
+    bottom: 5%;
+}
+
+.buttonOverlay::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 5px;
+    right: 5px;
+    background-color: #aabaf9;
+     z-index: -1; 
+    transition: transform .2s ease-in-out;
+}
+
+.buttonOverlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #474E51;
+}
+
+.buttonOverlay:hover::before {
+    transform: translate(6px, -4px);
+}
+
+
+
+  .blob {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  fill: #daf8ff;
+  width: 60%;
+  height: 60%;
+  transform:rotate(90deg); 
+  opacity: 0.7;
+}  
+
+.skills__title {
+    /* overflow: hidden; */
+    margin-top: 25%; 
+     left: 10%;  
+    font-family: "Playfair Display",serif;
+    color: #2F2F2F;
+    font-size: 3.8rem;
+    line-height: 1.2;
+    position: relative;
+     white-space: nowrap; 
+     opacity: 0;
+     /* animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+}
+
+.skills__title:after{
+    content:"";
+    overflow:hidden;
+    background-image:url(images/effect/brush-pink.svg);
+    background-repeat:no-repeat;
+    position:absolute; 
+    height:13px;
+    width:0;
+    display:block;
+    z-index:-1;
+    bottom: 3px;
+    animation:typing 0.3s steps(40, end);
+    animation-delay:2.5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#path-text{
+    margin-top: 20%;
+    margin-bottom: 15%;
+    opacity: 0;
+}
+
+
+.tracking-in-contract {
+    -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+    
+  }
+}
+
+.flip-in-hor-bottom {
+	-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+/* 예제 */
+.grid {
+	padding: 20px 20px 100px 20px;
+	max-width: 1300px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid li {
+	display: inline-block;
+	width: 440px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+	position: relative;
+}
+
+.grid li:hover figcaption{
+    opacity: 1;
+	transform: rotateY(0deg);
+	transition: transform 0.4s, opacity 0.1s; 
+}
+
+.grid li:hover img{
+    transition: transform 0.4s;
+    transform: translateX(25%);
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+    visibility: hidden;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #2c3f52;
+	color: #fff;
+    font-size: 12px;
+}
+
+.grid figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #ed4e6e;
+}
+
+.grid figcaption p {
+	margin: 2px;
+	padding: 0;
+}
+
+/* Caption Style 4 */
+
+.cs-style-4 figure > div {
+	overflow: hidden;
+}
+
+.cs-style-4 figcaption {
+	height: 100%;
+	width: 50%;
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: rotateY(-90deg);
+	-moz-transform: rotateY(-90deg);
+	transform: rotateY(-90deg);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <nav id="slide-menu" class="menu menu--inola">
+        <div class="menu-box">
+          <a id="menu_project" class="slide-item" href="project.html">
+            <span>Projects</span>
+          </a>
+          <a class="slide-item" href="about.html">
+            <span>About</span>
+          </a>
+          <a id="menu_contact" class="slide-item" href="contact.html">
+            <span>Contact</span>
+          </a>
+         
+        </div>
+  
+        <div class="menu-video">
+          <video id="project_video" autoplay muted loop>
+            <source src="videos/nyamnyam.mp4" type="video/mp4">
+          </video>
+          <video id="contact_video" autoplay muted loop>
+            <source src="videos/contact.mp4" type="video/mp4">
+          </video>
+        </div>
+      </nav>
+  
+  <div id="nav" class="nav container-fluid align-items-center justify-content-between">
+      <span  class="swingHorizontal" ><a class="nav-menu" href="/">ha0</a></span>
+      <div class="three col">
+          <div class="hamburger" id="hamburger-1">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+          <sapn class="swingHorizontal mr-3"><a class="nav-menu"><i class="fab fa-github-alt"></i></a></sapn>
+          <sapn class="swingHorizontal"><a class="nav-menu"><i class="fas fa-bold"></i></a></sapn>
+  </div>
+<div id="about-start1" class="about-start container-fluid">
+
+</div>
+<div id="about-start2" class="about-start container-fluid">
+
+</div>
+<section id="bg-morph">
+  <div class=" hero__flourish">
+  <svg class="hero__flourish-shape" viewBox="0 0 665 861">
+    <path fill="#FAE0E6" stroke="#FAE0E6" stroke-width="2" d="M6 -1.00002L665 -1.00006L665 861C665 861 195.93 718.511 245.775 487.68C295.619 256.85 212.917 235.324 84.8721 149.674C-30.0745 72.7857 6 -1.00002 6 -1.00002Z"></path>
+</svg>
+
+<svg class="hero__flourish-outline" viewBox="0 0 665 861">
+    <path fill="none" stroke="#FAE0E6" stroke-width="2" d="M6 -1.00002L665 -1.00006L665 861C665 861 195.93 718.511 245.775 487.68C295.619 256.85 212.917 235.324 84.8721 149.674C-30.0745 72.7857 6 -1.00002 6 -1.00002Z"></path>
+</svg>
+</div>
+</section>
+
+<section id="title">
+<div class="hero__caption">
+    <h1 class="hero__title">Hello, <br>my name is <span class="particletext hearts">Ha0</span></h1>
+    <p class="hero__copy">
+        개발이 재미있는 이유는 빠르게 발전하는 기술과 변화하는 트렌드에 맞춰 항상 배워나가야 한다는 점,
+        그로써 나 자신도 무궁무진하게 발전할 수 있다는 점입니다.
+        <br/>트렌드에 맞춰 항상 연구하고 정진하는 개발자가 되겠습니다.
+    </p>
+</div>
+<a class="scroll-link" href="#aboutMe">
+    <svg class="mouse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 130" preserveAspectRatio="xMidYMid meet">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="70" height="118" x="1.5" y="1.5" stroke="#ff8b94" stroke-width="3" rx="36"/>
+        <circle class="scroll" cx="36.5" cy="31.5" r="4.5" fill="#ff8b94"/>
+    </g>
+</svg>
+</a>
+
+</section>
+
+<svg  id="path-text" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+    <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"/>
+    
+    <text y="40" font-size="25">
+      <textPath id="text-path" href="#text-curve" startOffset="200">
+        * A better future
+        happens by development,
+        not chance.
+      </textPath>
+    </text>
+  </svg>
+
+<section id="aboutMe">
+    <div class="aboutMe">
+        <div id="aboutMe-path" class="blob">
+            <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+             <svg id="aboutMe-svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+            <path id="blob-path" d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+            </svg> 
+          </div>
+
+    <div class="aboutMe-card ">
+       
+      <div class=" card-content">
+          <h1>Choi Hayeong  <span>@ha0</span></h1>
+          <div class="card-introduces">
+            <h4 class="mb-4"><span>H</span>ard worker, <span>A</span>chievable, <span>0</span> in on works</h4>
+            <p> 제이름을 본딴 이 3단어는 일할 때의 제 모습을 담고 있습니다. </p>
+            <p>  저는 일을 할 때, 온 정신이 그 일에 집중되어 온전히 몰두하는 사람, <br>결과에 대한 욕심이 있어 많은 노력과 시간을 맡은 일에 투자하는 사람입니다. </p>
+            <p> 저는 다양한 방법을 모색하여 가장 효율적인 방법으로 구현하는 것을 좋아하며, <br>이용자들에게 보이지 않는 부분까지도 꼼꼼하고 깔끔하게 처리합니다. </p>
+            <p> 저의 욕심과 욕구는 앞으로도 많은 것들을 배우게 할 것이며, 최신기술을 끊임없이 연구하여 이용자와 협업자 모두에게 좋은 이용자경험을 제공하는 개발자가 되겠습니다.</p>  
+          </div>
+      </div>
+      <a href="contact.html" class="buttonOverlay">Contact Me</a>
+
+      <div class="card-photo">    </div> 
+    </div> 
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+</section>
+
+
+<section id="skills">
+    <div class="skills">
+   
+        <div><h1 class="skills__title">skills</h1></div>
+        
+    </div>
+   
+
+
+<ul class="grid cs-style-4">
+    <li>
+        <figure>
+            <div><img src="images/about/java.jpg" width="400" height="300"/></div>
+            <figcaption>
+                <h3 class="mb-4">Java</h3>
+                <p >· 다양한 패키지, 클래스 활용</p>
+                <p>· 입출력 스트림 활용</p>
+                <p >· JAVA 이벤트 처리</p>
+                <p >· 스윙 컴포넌트 활용</p>
+                <p >· 스레드와 멀티태스킹</p>
+                <p >· 소켓 프로그래밍</p>
+                 <p >· SQL 활용</p>
+               
+            </figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure>
+            <div><img src="images/about/jsp.jpg" alt="img06"></div>
+            <figcaption>
+                <h3 class="mb-4">Jsp</h3>
+                <p >· JSP 문법 활용 (표현식, 스크립트릿 선언, JSTL 등</p>
+                <p>· Session과 Cookie 활용</p>
+                <p >· 페이지 간 객체 전달</p>
+                <p >· 서블릿의 동작 원리와 라이프 사이클에 대한 이해</p>
+                <p >· JDBC를 이용하여 DB와 연동</p>
+                <p >· JAVA기반 동적페이지 구축</p>
+                 <p >· MVC패턴: 게시판 구현</p>
+            </figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure>
+            <div><img src="images/about/js.jpg" alt="img02"></div>
+            <figcaption>
+                <h3>HTML</h3>
+                <h3>JavaScript</h3>
+                <h3>JQuery</h3>
+                <h3 class="mb-4">css</h3>
+                <p >· 다양한 이벤트 처리</p>
+                <p>·  Ajax를 이용한  댓글처리, 유효성 검증</p>
+                <p >· BOOTSTRAP을 활용</p>
+                
+                
+            </figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure>
+            <div><img src="images/about/spring.jpg" alt="img04"></div>
+            <figcaption>
+                <h3 class="mb-4">Spring</h3>
+                <p >· Spring MVC 설정 및 사용</p>
+                <p>·  MyBatis활용</p>
+                <p >· 게시글 CRUD, 검색, 페이징 처리</p>
+                <p >· REST 방식, Ajax: 댓글, 좋아요, 팔로우 처리</p>
+                <p >· AOP와 트랜잭션 사용</p>
+                <p >· 파일 업로드</p>
+           
+            </figcaption>
+        </figure>
+    </li>
+    <li>
+        <figure>
+            <div><img src="images/about/db.jpg" alt="img01"></div>
+            <figcaption>
+                <h3 class="mb-4">Database</h3>
+                <p >· DDL, DCL, DML구별, 사용</p>
+                <p>·  데이터 무결성을 지키기 위한 제약조건 설정</p>
+                <p >· INDEX의 생성 원리, 동작 원리 이해</p>
+                <p >· VIEW의 사용 목적이해, 생성</p>
+                <p >· SUB QUERY,SEQUENCE 활용</p>
+               
+            </figcaption>
+        </figure>
+    </li>
+    
+</ul>
+</section>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+    $('#about-start1').slideUp(500);
+    $('#about-start2').delay(500).slideUp(500);
+    $('body').css('background-color','white');
+    $('.line').css('background-color','black');
+    $('#nav').css('animation-delay','1.5s');
+    $('.nav-menu').css('color','black');
+    $(window).scroll( function(){
+        /* 2 */
+        $('.aboutMe').each( function(i){
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_element ){
+                $(this).animate({'opacity':'1'},500);  
+               
+            }
+        }); 
+
+        $('#path-text').each( function(i){
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_element ){
+                $(this).attr('class','tracking-in-contract');  
+                $('#path-text').fadeIn(700);
+            }
+        }); 
+
+        $('.skills__title').each( function(i){
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_element ){
+                $(this).css('animation','slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both');
+               // $(this).attr('class','tracking-in-contract');  
+            }
+        });
+        
+        $('figure').each(function(index){
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_element ){
+             $(this).delay(index*250)
+             .queue(function(next){
+                $(this).css('visibility','visible');
+                $(this).css('animation','flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both');
+                next();
+                
+             });
+            }
+         })
+
+    });
+
+});
+
+function initparticles() {
+   hearts();
+}
+
+function hearts() {
+   $.each($(".hearts"), function(){
+      var heartcount = ($(this).width()/50)*5;
+      for(var i = 0; i <= heartcount; i++) {
+         var size = ($.rnd(60,120)/10);
+         $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+      }
+   });
+}
+
+jQuery.rnd = function(m,n) {
+      m = parseInt(m);
+      n = parseInt(n);
+      return Math.floor( Math.random() * (n - m + 1) ) + m;
+}
+setTimeout(function() {
+    initparticles();
+}, 2500);
+
+
+var isFolded = true;
+$('#hamburger-1').on('click',function(){
+    
+    if(isFolded){
+    $('#nav').css('z-index','10');
+   
+    // $('#slide-menu').css('z-index','8'); 
+    $('#project').css('z-index','-8')   
+    $('.hero__caption').css('visibility','hidden');
+    // $('#nav').css('background-color','white');
+
+    //$('#project').css('background-color','white');
+   
+    $('.line').css('background-color','black');
+    $('#slide-menu').animate({
+        height: '100%'
+        
+    },1000)
+    $('#slide-menu').css('z-index','9');
+    $('.nav-menu').css('color','black');
+    $('.nav-menu').css('z-index','12');
+    $('.slide-item').delay(500).animate({
+        opacity:'1'
+    },500);
+    $('#hamburger-1').toggleClass('is-active');
+    }else{            
+    $('#project').css('background-color','#eee3e7');
+   
+        // $('.line').css('background-color','white');
+         $('#slide-menu').animate({
+             height: '0vh'
+         },1000,function(){
+            $('.hero__caption').css('visibility','visible');
+         });
+         
+         $('.slide-item').delay(500).animate({
+        opacity:'0'
+    });
+   
+        $('#hamburger-1').toggleClass('is-active');
+    }
+    isFolded=!isFolded;
+
+});
+$("#menu_project").hover(function(){
+        $('#project_video').css('visibility','visible');
+    }, function() {
+        $('#project_video').css('visibility','hidden');
+    });
+
+    $("#menu_contact").hover(function(){
+        $('#contact_video').css('visibility','visible');
+    }, function() {
+        $('#contact_video').css('visibility','hidden');
+    });
+</script>
+</body>
+</html>
