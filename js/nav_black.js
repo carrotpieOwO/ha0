@@ -26,6 +26,7 @@ $("#hamburger-1").on("click", function () {
       },
       500
     );
+    $('body').css('overflow','hidden');
     $('.blob').css('opacity','1');
     $("#hamburger-1").toggleClass("is-active");
   } else {
@@ -38,6 +39,7 @@ $("#hamburger-1").on("click", function () {
       },
       1000,
       function () {
+        $('body').css('overflow','');
         $('.blob').css('opacity','0');
         $(".hero__caption").css("visibility", "visible");
       }

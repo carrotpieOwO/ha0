@@ -102,7 +102,7 @@
 }
 
 #slide-menu {
-  background-color: ivory;
+  background-color: white;
   position: fixed;
   top: 0;
   height: 0;
@@ -115,11 +115,13 @@
 
 .menu-box {
   position: relative;
+  /* height: 100vh; */
   top: 20%;
+  /* top: 20%;
   left: 10%;
   float: left;
   padding: 0;
-  margin: 0;
+  margin: 0; */
 }
 
 #slide-menu a {
@@ -130,9 +132,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.25em 0;
-  font-family: "Fanwood Text", serif;
-  font-size: 2.25em;
+  /* margin: 1.25em 0; */
+  margin: 130px;
+  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 60px;
   padding: 0 0.25em;
   justify-content: left;
 }
@@ -142,7 +146,7 @@
   position: relative;
   display: block;
   cursor: pointer;
-  font-family: 'Shadows Into Light', cursive;
+    font-family: 'Shadows Into Light', cursive;
 font-family: 'Roboto Mono', monospace;
 }
 
@@ -151,7 +155,7 @@ font-family: 'Roboto Mono', monospace;
   content: "";
   position: absolute;
   width: 0%;
-  height: 12px;
+  height: 20px;
   top: 50%;
   margin-top: -0.5px;
   background: hotpink;
@@ -165,6 +169,7 @@ font-family: 'Roboto Mono', monospace;
   top: 50%;
   margin-top: -0.5px;
   background: hotpink;
+  z-index: -1;
 }
 
 .slide-item span:before {
@@ -213,7 +218,7 @@ font-family: 'Roboto Mono', monospace;
   width: 130%;
   transition: 0s;
 }
-
+/* 
 
 #contact_video {
   visibility: hidden;
@@ -243,7 +248,7 @@ font-family: 'Roboto Mono', monospace;
   width: 50%;
   height: 50%;
   float: center;
-}
+} */
 
 .blob {
   position: absolute;
